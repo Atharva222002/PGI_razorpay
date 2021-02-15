@@ -14,23 +14,48 @@
             padding: 0;
             box-sizing: border-box;
         }
+        body{
+          width: 100vw;
+          height: fit-content;
+        }
         .nav{
-            background-color: yellow;
-            box-shadow: 1px 1px 1px 1px black;
+          position: sticky;
+            background-color: rgba(0, 0, 0, 0.144);
+            box-shadow: 5px 1px 5px 3px black;
+        }
+        .main::before{
+            background: url("bg.jpg") no-repeat center center/cover;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height:100%;
+            opacity: 0.5;
+            z-index: -2;
         }
         .main{
-            height: 100vh;
+            height: fit-content;
             width: 100vw;
         }
+        .carousel{
+          margin-top: 1.3em;
+          margin-left: 1.3em;
+            box-shadow: 0 0 10px red;
+          width: 50%;
+        }
         .carousel-item{
-            background-color: blue;
-            width: 100%;
-            height: 60vh;
+
+            height: 65vh;
         }
         .carousel img{
             height: 100%;
             width: 100%;
             
+        }
+        .navbar{
+          display: block;
+          width: 100%;
         }
         .nav img{
             height: 2.5em;
@@ -48,30 +73,84 @@
             color: tomato;
             text-shadow: 1px 3px black;
         }
-        .nav button{
-            margin-left:55em;
+       .nav button{
+            float: right;
+            margin-top: 0.5em;
         }
         .quote{
-            background-color: rgb(187, 247, 237);
             width: 100%;
             height:fit-content;
             text-align: center;
         }
-        #q{
-           padding-top: 1em; 
+        #q{ 
+          padding-top: 0.4em;
            font-size: 3.4em;
            font-weight:900;
            color: brown;
         }
-        #n{
-            text-align: right;
-            padding-right: 1em;
-            color: rgb(255, 102, 0);
-            font-weight: bold;
-        }
         a{
             text-decoration: none;
         }
+        .cor{
+          display: flex;
+          flex-direction: row;
+        }
+        .des{
+          margin:auto;
+          margin-left: 5em;
+        }
+        .des p:nth-child(even){
+          color: red;
+          font-size: large;
+          font-weight: bold;
+        }
+        .des p:nth-child(odd){
+          font-size: 2em;
+          font-weight: bold;
+          margin-top: 2em;
+        }
+        @media only screen and (max-width: 991px) {
+          .cor{
+          flex-direction: column;
+        }
+          .carousel{
+          margin: 1em auto;
+            box-shadow: 0 0 10px red;
+          width: 90%;
+        }
+        .carousel-item{
+          height: 40vh;
+        }
+        #q{ 
+          padding-top: 0.1em;
+           font-size: 2em;
+           font-weight:800;
+           color: brown;
+        }
+        .des p:nth-child(even){
+          color: red;
+          font-size: 1.4em;
+          font-weight: 400;
+        }
+        .des p:nth-child(odd){
+          font-size: 1.5em;
+          font-weight: bold;
+          margin-top: 0em;
+        }
+}
+@media only screen and (max-width: 411px) {
+  .nav{
+    height: fit-content;
+  }
+  .navbar-brand{
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  .des{
+          margin:auto;
+        }
+}
     </style>
   </head>
   <body>
@@ -83,10 +162,12 @@
                 <img src="23f7de89-8c4c-4a29-95b3-b6ee4c66c5bc_200x200.png" alt="">
             <span>SEVA FOUNDATION</span> 
             </a>
-            <a href="https://rzp.io/l/kiY2NDyBB"><button type="button" class="btn btn-outline-success">Donate</button></a> 
+            <a href="https://rzp.io/l/kiY2NDyBB"><button type="button" class="btn btn-success">Donate</button></a> 
             </nav>
         </div>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="cor">
+
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img  src="img1.jpg" alt="First slide">
@@ -107,9 +188,15 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+          <div class="des">
+            <p>Who We Are?</p>
+            <p>The SEVA Foundation is NGO which works across India.</p>
+            <p>What We Do?</p>
+            <p>Our aim is to help underprivileged children for their Education, Health and safeguarding children rights.</p>
+          </div>
+        </div>
           <div class="quote">
-              <p id="q">No one has ever become poor by giving.</p>
-              <p id="n">– Anne Frank</p>
+              <p id="q">Even your small donation can make difference!</p>
           </div>
     </div>
     <!-- Optional JavaScript -->
